@@ -1,0 +1,15 @@
+{
+  "name": "myezraproject",
+  "version": "1.0.0",
+  "description": "thats my project. something like portfolio or maybe bio.",
+  "main": "dest/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/ezrastas/MyEzraProject"
+  },
+  "author": "EzraStas",
+  "license": "MIT"
+}
