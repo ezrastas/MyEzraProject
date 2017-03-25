@@ -1,0 +1,12 @@
+@import "variables.scss";
+
+body{
+  font-style: $font-stack;
+  background-color: $primary-color;
+ ul{
+   color:$primary-color;
+   li{
+     font-color: $primary-color;
+   }
+ }
+}
