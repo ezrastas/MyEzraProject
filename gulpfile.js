@@ -46,9 +46,27 @@ gulp.task('build:fonts', function(){
 
 });
 
-gulp.task("watcher", function(){
-	return watch([
-		path.src,
-	],
-  ["build:css", "build:js", "build:fonts", "build:examples.html"])
+// gulp.task("watcher", function(){
+// 	return watch([
+// 		'src/'
+// 	],
+//   ["build:css", "build:js", "build:fonts", "build:examples.html"])
+// });
+
+gulp.task('watcher', function(){
+    watch([path.src.html], function(event, cb) {
+        gulp.start('build:html');
+    });
+    watch([path.src.style], function(event, cb) {
+        gulp.start('build:css');
+    });
+    watch([path.src.js], function(event, cb) {
+        gulp.start('build:js');
+    });
+    watch([path.src.img], function(event, cb) {
+        gulp.start('build:img');
+    });
+    watch([path.src.fonts], function(event, cb) {
+        gulp.start('build:fonts');
+    });
 });
