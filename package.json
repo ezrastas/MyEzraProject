@@ -13,8 +13,7 @@
   "author": "EzraStas",
   "license": "MIT",
   "devDependencies": {
-    "angular": "^1.6.3",
-    "bootstrap": "^3.3.7",
+    "bower": "^1.8.0",
     "gulp-clean-css": "^3.0.3",
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^1.2.2",

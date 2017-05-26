@@ -1,12 +1,52 @@
-@import "variables.scss";
+@import 'variables';
 
-body{
-  font-style: $font-stack;
-  background-color: $primary-color;
- ul{
-   color:$primary-color;
-   li{
-     font-color: $primary-color;
-   }
- }
+.lang-screen{
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+
 }
+.lang-menu{
+  background-color: $bg-color;
+  color: $font-color;
+  width: 100%;
+  height: initial;
+  margin-right: auto;
+  margin-top: 100%;
+  margin-left: auto;
+  max-width: 280px;
+  text-align: center;
+  font-size: 50px;
+
+  .row{
+   margin: 0px;
+  }
+  .btn{
+   font-size: 30px;
+  }
+  :hover{
+    font-size: 29px;
+    color: white;
+  }
+}
+.main-screen{
+@extend .lang-screen;
+z-index: 1;
+}
+.main-menu{
+@extend .lang-menu;
+max-width: 100%;
+width: 280px;
+margin-top: 30%;
+height: 0px;
+}
+.EngMainPage{
+  background-color: $bg-color;
+  width: 0px;
+  height: 0px;
+
+}
+  // width: 100px;
+  // height: 50px;

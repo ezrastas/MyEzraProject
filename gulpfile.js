@@ -1,4 +1,4 @@
-
+'use strict';
 
 var gulp = require('gulp'),
     watch = require('gulp-watch'),
@@ -8,11 +8,13 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
 
+    minifyJS = require('gulp-uglify'),
+
     partsHTML = require('gulp-rigger'),
 
     path = {
       build: {
-          html: ['build/index.html'],
+          html: 'build/',
           js: 'build/js/',
           css: 'build/css/',
           img: 'build/img/',
@@ -24,6 +26,9 @@ var gulp = require('gulp'),
           style: 'src/css/scss/*.scss',
           img: 'src/img/**/*.*',
           fonts: 'src/fonts/**/*.*'
+      },
+      watch: { //Пути откуда брать исходники
+          html: 'src/**/*.html'
       }
 };
 
@@ -37,24 +42,25 @@ gulp.task('build:css', function(){
 });
 
 gulp.task('build:js', function(){
+  gulp.src(path.src.js)
+    .pipe(minifyJS())
+    .pipe(rename({suffix: '.min'}))
+  .pipe(gulp.dest(path.build.js))
 });
 
 gulp.task('build:html', function(){
+  gulp.src(path.src.html)
+    .pipe(partsHTML())
+  .pipe(gulp.dest(path.build.html));
 });
 
 gulp.task('build:fonts', function(){
 
 });
 
-// gulp.task("watcher", function(){
-// 	return watch([
-// 		'src/'
-// 	],
-//   ["build:css", "build:js", "build:fonts", "build:examples.html"])
-// });
 
 gulp.task('watcher', function(){
-    watch([path.src.html], function(event, cb) {
+    watch([path.watch.html], function(event, cb) {
         gulp.start('build:html');
     });
     watch([path.src.style], function(event, cb) {

@@ -1,0 +1,22 @@
+{
+  "name": "myezraproject",
+  "description": "thats my project. something like portfolio or maybe bio.",
+  "main": "dest/index.html",
+  "authors": [
+    "EzraStas"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ezrastas/MyEzraProject",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap": "^3.3.7",
+    "angular": "^1.6.4"
+  }
+}
